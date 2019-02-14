@@ -33,6 +33,7 @@ $(document).ready(function(){
   var clicked = function() {
     $('.container-item').on('click', function(event){
       window.scrollTo(0, 0);
+      clearForm();
       var keyData = event.currentTarget.id;
       var localStrg = JSON.parse(localStorage.getItem(keyData));
       $('.input-key').val(keyData);
