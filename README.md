@@ -7,21 +7,20 @@ Create Read Update and Delete framework using JS
 ### Basic Reqs
 - [x] Where to store data? (localstorage)
 - [x] How to capture data? (web form)
-- [ ] How to modify data? (update action, delete action)
-- [ ] How to view data? (style?)
-- [ ] UI/UX considerations (how are we going to use this)
-      - [ ] List of items (Name, Description)
-      - [ ] Individual item (all object fields)
+- [x] How to modify data? (update action, delete action)
+- [x] How to view data? (style?)
+- [x] UI/UX considerations (how are we going to use this)
+      - [x] List of items (Name, Description)
+      - [x] Individual item (all object fields)
 - [x] Item Name (key)
-- [ ] Create object for other information (value)
-      - [ ] Brief Description / What it Does
-      - [ ] Language / Library / Keywords (i.e. JavaScript, Mocha, Chai, Underbar, jQuery, HTML, CSS, Terminal, GitHub, etc.)
-      - [ ] URL to Full Description (i.e. MDN, Underbar, jQuery)
+- [x] Create object for other information (value)
+      - [x] Brief Description / What it Does
+      - [x] Language / Library / Keywords (i.e. JavaScript, Mocha, Chai, Underbar, jQuery, HTML, CSS, Terminal, GitHub, etc.)
+      - [x] URL to Full Description (i.e. MDN, Underbar, jQuery)
       - [ ] Snippet of Code (color coded)
-      - [ ] Examples & Other Resources (where did you use this code) - local file directory, URL (GitHub)
-      - [ ] Familiarity (not at all, slightly, somewhat, moderately, extremely)
-      - [ ] Discovery Resource (Who/Where did you discover it from (i.e. HREXT, SSP, Person Name, Internet Search))
- - [ ] All resources have clickable link
+      - [x] Examples & Other Resources (where did you use this code) - local file directory, URL (GitHub)
+      - [x] Familiarity (not at all, slightly, somewhat, moderately, extremely)
+ - [x] URL has clickable link
 
 ### Advanced Reqs
 - [ ] Checkbox to add item to Flashcard Stack
