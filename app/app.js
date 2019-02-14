@@ -1,6 +1,18 @@
 $(document).ready(function(){
-  var familiarOptions = ['notAtAll', 'slightly', 'somewhat', 'moderately', 'extremely'];
+  var familiarOptions = ['None', 'Slightly', 'Somewhat', 'Moderately', 'Extremely'];
   var languageOptions = ['Chai', 'CSS', 'GitHub', 'HTML', 'JavaScript', 'jQuery', 'Mocha', 'Terminal', 'Underbar'];
+
+  var familiarity = function() {
+    for (var i = 0; i < familiarOptions.length; i++) {
+      $('<input type="radio" class="input-familiarity" name="familiarity" id="' + familiarOptions[i] + '" value="' + familiarOptions[i] + '">\n<label for="' + familiarOptions[i] +'">'+ familiarOptions[i] +'</label><br>').appendTo('.container-familiarity');
+    }
+  }();
+
+  var languages = function() {
+    for (var i = 0; i < languageOptions.length; i++) {
+      $('<div>\n<input type="checkbox" id="'+languageOptions[i]+'" name="language" value="'+languageOptions[i]+'">\n<label for="'+languageOptions[i]+'">'+languageOptions[i]+'</label>\n</div>').appendTo('.container-language');
+    }
+  }();
 
   var clearForm = function() {
     // clear form
@@ -11,7 +23,7 @@ $(document).ready(function(){
     $('.input-description').val('');
     $('input[type=checkbox][name=language]:checked').val('');
     for (var i = 0; i < languageOptions.length; i++) {
-      document.getElementById(languageOptions[i].toLowerCase()).checked = false;
+      document.getElementById(languageOptions[i]).checked = false;
     }
     $('.input-snippet').val('');
     $('.input-resources').val('');
@@ -34,31 +46,10 @@ $(document).ready(function(){
       }
       _.each(local['language'], function(lang) {
         for (var i = 0; i < languageOptions.length; i++) {
-          console.log('lang: ' + lang);
           if (lang === languageOptions[i]) {
-            console.log('langOpt: ' + languageOptions[i].toLowerCase())
-            $('#' + languageOptions[i].toLowerCase()).prop("checked", true);
+            $('#' + languageOptions[i]).prop("checked", true);
           }
         }
-        // if (lang === 'Chai') {
-        //   $('#chai').prop("checked", true);
-        // } else if (lang === 'CSS') {
-        //   $('#css').prop("checked", true);
-        // } else if (lang === 'GitHub') {
-        //   $('#github').prop("checked", true);
-        // } else if (lang === 'HTML') {
-        //   $('#html').prop("checked", true);
-        // } else if (lang === 'JavaScript') {
-        //   $('#javascript').prop("checked", true);
-        // } else if (lang === 'jQuery') {
-        //   $('#jquery').prop("checked", true);
-        // } else if (lang === 'Mocha') {
-        //   $('#mocha').prop("checked", true);
-        // } else if (lang === 'Terminal') {
-        //   $('#terminal').prop("checked", true);
-        // } else if (lang === 'Underbar') {
-        //   $('#underbar').prop("checked", true);
-        // };
       });
     });
   };
@@ -107,7 +98,7 @@ $(document).ready(function(){
       // add to container-data
       deleteItem(keyData);
       var display = keyData + ' - ' + valueData['description'];
-      var item = $('<div class="container-item container" id="' + keyData + '">' + display + '</div>').appendTo('.container-data');
+      $('<div class="container-item container" id="' + keyData + '">' + display + '</div>').appendTo('.container-data');
       clearForm();
       clicked();     
     }
