@@ -1,13 +1,18 @@
 $(document).ready(function(){
+  var familiarOptions = ['notAtAll', 'slightly', 'somewhat', 'moderately', 'extremely'];
+
 
   var clearForm = function() {
     // clear form
     $('.input-key').val('');
-    document.getElementById("notAtAll").checked = false;
-    document.getElementById("slightly").checked = false;
-    document.getElementById("somewhat").checked = false;
-    document.getElementById("moderately").checked = false;
-    document.getElementById("extremely").checked = false;
+    for (var i = 0; i < familiarOptions.length; i++) {
+      document.getElementById(familiarOptions[i]).checked = false;
+    }
+    // document.getElementById("notAtAll").checked = false;
+    // document.getElementById("slightly").checked = false;
+    // document.getElementById("somewhat").checked = false;
+    // document.getElementById("moderately").checked = false;
+    // document.getElementById("extremely").checked = false;
     $('.input-description').val('');
     $('input[type=checkbox][name=language]:checked').val('');
     document.getElementById("chai").checked = false;
