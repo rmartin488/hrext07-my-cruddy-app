@@ -17,7 +17,7 @@ Create Read Update and Delete framework using JS
       - [x] Brief Description / What it Does
       - [x] Language / Library / Keywords (i.e. JavaScript, Mocha, Chai, Underbar, jQuery, HTML, CSS, Terminal, GitHub, etc.)
       - [x] URL to Full Description (i.e. MDN, Underbar, jQuery)
-      - [ ] Snippet of Code (color coded)
+      - [/] Snippet of Code (color coded)
       - [x] Examples & Other Resources (where did you use this code) - local file directory, URL (GitHub)
       - [x] Familiarity (not at all, slightly, somewhat, moderately, extremely)
  - [x] URL has clickable link

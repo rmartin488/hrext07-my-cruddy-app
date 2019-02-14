@@ -55,26 +55,24 @@ $(document).ready(function(){
   };
 
   var displayAll = function() {
+    $('.container-data').html('')
     var keys = Object.keys(localStorage);
     keys.sort();
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
       var valueData = JSON.parse(localStorage.getItem(key))['description'];
-      var display = key + ' - ' + valueData;
-      var item = $('<div class="container-item container" id="' + key + '">' + display + '</div>').appendTo('.container-data');
+      $('<div class="container-item container" id="' + key + '"><strong>' + key + '</strong> - ' + valueData + '</div>').appendTo('.container-data');
     }
     clicked();
-  }
+  };
 
-  var deleteItem = function(keyData) {
-    $('#'+ keyData).remove();
-  }
 
   displayAll();
 
   $('.btn-delete').on('click', function(event){
     var keyData = $('.input-key').val();
-    deleteItem(keyData);
+    console.log(keyData);
+    $('#'+ keyData).remove();
     localStorage.removeItem(keyData);
     clearForm();
   });
@@ -96,9 +94,7 @@ $(document).ready(function(){
       // write to db
       localStorage.setItem(keyData, JSON.stringify(valueData));
       // add to container-data
-      deleteItem(keyData);
-      var display = keyData + ' - ' + valueData['description'];
-      $('<div class="container-item container" id="' + keyData + '">' + display + '</div>').appendTo('.container-data');
+      displayAll();
       clearForm();
       clicked();     
     }
