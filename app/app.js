@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var familiarOptions = ['notAtAll', 'slightly', 'somewhat', 'moderately', 'extremely'];
-
+  var languageOptions = ['Chai', 'CSS', 'GitHub', 'HTML', 'JavaScript', 'jQuery', 'Mocha', 'Terminal', 'Underbar'];
 
   var clearForm = function() {
     // clear form
@@ -8,22 +8,11 @@ $(document).ready(function(){
     for (var i = 0; i < familiarOptions.length; i++) {
       document.getElementById(familiarOptions[i]).checked = false;
     }
-    // document.getElementById("notAtAll").checked = false;
-    // document.getElementById("slightly").checked = false;
-    // document.getElementById("somewhat").checked = false;
-    // document.getElementById("moderately").checked = false;
-    // document.getElementById("extremely").checked = false;
     $('.input-description').val('');
     $('input[type=checkbox][name=language]:checked').val('');
-    document.getElementById("chai").checked = false;
-    document.getElementById("css").checked = false;
-    document.getElementById("github").checked = false;
-    document.getElementById("html").checked = false;
-    document.getElementById("javascript").checked = false;
-    document.getElementById("jquery").checked = false;
-    document.getElementById("mocha").checked = false;
-    document.getElementById("terminal").checked = false;
-    document.getElementById("underbar").checked = false;
+    for (var i = 0; i < languageOptions.length; i++) {
+      document.getElementById(languageOptions[i].toLowerCase()).checked = false;
+    }
     $('.input-snippet').val('');
     $('.input-resources').val('');
     $('.input-url').val('');
@@ -38,38 +27,38 @@ $(document).ready(function(){
       $('.input-snippet').val(local['snippet']);
       $('.input-resources').val(local['resources']);
       $('.input-url').val(local['url']);
-      if (local['familiarity'] === 'notAtAll') {
-        $('#notAtAll').prop("checked", true);
-      } else if (local['familiarity'] === 'slightly') {
-        $('#slightly').prop("checked", true);
-      } else if (local['familiarity'] === 'somewhat') {
-        $('#somewhat').prop("checked", true);
-      } else if (local['familiarity'] === 'moderately') {
-        $('#moderately').prop("checked", true);
-      } else if (local['familiarity'] === 'extremely') {
-        $('#extremely').prop("checked", true);
+      for (var i = 0; i < familiarOptions.length; i++) {
+        if (local['familiarity'] === familiarOptions[i]) {
+          $('#' + familiarOptions[i]).prop("checked", true);
+        }
       }
       _.each(local['language'], function(lang) {
-        console.log(lang);
-        if (lang === 'Chai') {
-          $('#chai').prop("checked", true);
-        } else if (lang === 'CSS') {
-          $('#css').prop("checked", true);
-        } else if (lang === 'GitHub') {
-          $('#github').prop("checked", true);
-        } else if (lang === 'HTML') {
-          $('#html').prop("checked", true);
-        } else if (lang === 'JavaScript') {
-          $('#javascript').prop("checked", true);
-        } else if (lang === 'jQuery') {
-          $('#jquery').prop("checked", true);
-        } else if (lang === 'Mocha') {
-          $('#mocha').prop("checked", true);
-        } else if (lang === 'Terminal') {
-          $('#terminal').prop("checked", true);
-        } else if (lang === 'Underbar') {
-          $('#underbar').prop("checked", true);
-        };
+        for (var i = 0; i < languageOptions.length; i++) {
+          console.log('lang: ' + lang);
+          if (lang === languageOptions[i]) {
+            console.log('langOpt: ' + languageOptions[i].toLowerCase())
+            $('#' + languageOptions[i].toLowerCase()).prop("checked", true);
+          }
+        }
+        // if (lang === 'Chai') {
+        //   $('#chai').prop("checked", true);
+        // } else if (lang === 'CSS') {
+        //   $('#css').prop("checked", true);
+        // } else if (lang === 'GitHub') {
+        //   $('#github').prop("checked", true);
+        // } else if (lang === 'HTML') {
+        //   $('#html').prop("checked", true);
+        // } else if (lang === 'JavaScript') {
+        //   $('#javascript').prop("checked", true);
+        // } else if (lang === 'jQuery') {
+        //   $('#jquery').prop("checked", true);
+        // } else if (lang === 'Mocha') {
+        //   $('#mocha').prop("checked", true);
+        // } else if (lang === 'Terminal') {
+        //   $('#terminal').prop("checked", true);
+        // } else if (lang === 'Underbar') {
+        //   $('#underbar').prop("checked", true);
+        // };
       });
     });
   };
