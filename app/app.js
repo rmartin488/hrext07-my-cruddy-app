@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var familiarOptions = ['None', 'Slightly', 'Somewhat', 'Moderately', 'Extremely'];
-  var languageOptions = ['Chai', 'CSS', 'GitHub', 'HTML', 'JavaScript', 'jQuery', 'Mocha', 'Terminal', 'Underbar'];
+  var languageOptions = ['Chai', 'CSS', 'GitHub', 'HTML', 'JavaScript', 'jQuery', 'Mocha', 'Terminal', 'Underscore'];
 
   var familiarity = function() {
     for (var i = 0; i < familiarOptions.length; i++) {
@@ -58,7 +58,6 @@ $(document).ready(function(){
   var displayAll = function() {
     $('.container-data').html('')
     var keys = Object.keys(localStorage);
-    keys.sort();
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
       var valueData = JSON.parse(localStorage.getItem(key))['description'];
