@@ -2,41 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HREXT07 R00lz!</title>
-  <script
-          src="https://code.jquery.com/jquery-3.3.1.js"
+  <title>Resource Locator</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
           crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <script src="app/app.js"></script>
   <link rel="stylesheet" href="css/style.css">
 
-
-  <!--
-
-√ create container
-√ create button
-√ input field
-√ container to display text
-√ update button(or maybe click on the container item)
-√ delete button
-container for the response-feedback (start with alert)
--->
 </head>
 <body>
+<header class="title">
+  Resource Locator
+</header>
 
 <div class="container-main">
-  <header>My Cruddy App</header>
-  <div class="container-form">
-    <input type="text" class="input-key" placeholder="enter key">
-    <input type="text" class="input-value" placeholder="enter value">
-    <button class="btn-add">Submit</button>
-    <button class="btn-update">Update</button>
-    <button class="btn-delete">Delete</button>
-    <button class="btn-clear">Clear</button>
+  <form>
+    <input type="text" class="input-key" placeholder="Topic">
+    <div class = "container-familiarity">
+      Familiarity<br>
+      <input type="radio" class="input-familiarity" name="familiarity" id="notAtAll" value="notAtAll" >
+        <label for="notAtAll">Not At All</label><br>
+      <input type="radio" class="input-familiarity" name="familiarity" id="slightly" value="slightly">
+        <label for="slightly">Slightly</label><br>
+      <input type="radio" class="input-familiarity" name="familiarity" id="somewhat" value="somewhat">
+        <label for="somewhat">Somewhat</label><br>
+      <input type="radio" class="input-familiarity" name="familiarity" id="moderately" value="moderately">
+        <label for="moderately">Moderately</label><br>
+      <input type="radio" class="input-familiarity" name="familiarity" id="extremely" value="extremely">
+        <label for="extremely">Extremely</label>
+    </div>
+    <textarea class="input-description" placeholder="Brief Description"></textarea>
+    <div class = "container-language">
+      Language / Library
+      <div>
+        <input type="checkbox" id="chai" name="language" value="Chai">
+          <label for="Chai">Chai</label>
+      </div>
+      <div>
+        <input type="checkbox" id="css" name="language" value="CSS">
+          <label for="css">CSS</label>
+      </div>
+      <div>
+        <input type="checkbox" id="github" name="language" value="GitHub">
+          <label for="github">GitHub</label>
+      </div>
+      <div>
+        <input type="checkbox" id="html" name="language" value="HTML">
+          <label for="html">HTML</label>
+      </div>
+      <div>
+        <input type="checkbox" id="javascript" name="language" value="JavaScript">
+          <label for="javascript">JavaScript</label>
+      </div>
+      <div>
+        <input type="checkbox" id="jquery" name="language" value="jQuery">
+          <label for="jquery">jQuery</label>
+      </div>
+      <div>
+        <input type="checkbox" id="mocha" name="language" value="Mocha">
+          <label for="mocha">Mocha</label>
+      </div>
+      <div>
+        <input type="checkbox" id="terminal" name="language" value="Terminal">
+          <label for="terminal">Terminal</label>
+      </div>
+      <div>
+        <input type="checkbox" id="underbar" name="language" value="Underbar">
+          <label for="underbar">Underbar</label>
+      </div>
+    </div>
+    <textarea class="input-snippet" placeholder="Snippet of Code"></textarea>
+    <textarea class="input-resources" placeholder="Examples & Other Resources"></textarea>
+    <input type="url" class="input-url" placeholder="Resource URL">
+    <input type="button" class="followURL" value="GO">
+    <div class="container-submit">
+      <input type="button" class="btn-delete" value="Delete">
+      <input type="button" class="btn-add" value="Submit">
+    </div>
+  </form>
+  <div class="container-data">
   </div>
-  <div class="container-data"></div>
 </div>
-
 </body>
 </html>
