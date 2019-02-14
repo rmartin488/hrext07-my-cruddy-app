@@ -32,19 +32,20 @@ $(document).ready(function(){
 
   var clicked = function() {
     $('.container-item').on('click', function(event){
+      window.scrollTo(0, 0);
       var keyData = event.currentTarget.id;
-      var local = JSON.parse(localStorage.getItem(keyData));
+      var localStrg = JSON.parse(localStorage.getItem(keyData));
       $('.input-key').val(keyData);
-      $('.input-description').val(local['description']);
-      $('.input-snippet').val(local['snippet']);
-      $('.input-resources').val(local['resources']);
-      $('.input-url').val(local['url']);
+      $('.input-description').val(localStrg['description']);
+      $('.input-snippet').val(localStrg['snippet']);
+      $('.input-resources').val(localStrg['resources']);
+      $('.input-url').val(localStrg['url']);
       for (var i = 0; i < familiarOptions.length; i++) {
-        if (local['familiarity'] === familiarOptions[i]) {
+        if (localStrg['familiarity'] === familiarOptions[i]) {
           $('#' + familiarOptions[i]).prop("checked", true);
         }
       }
-      _.each(local['language'], function(lang) {
+      _.each(localStrg['language'], function(lang) {
         for (var i = 0; i < languageOptions.length; i++) {
           if (lang === languageOptions[i]) {
             $('#' + languageOptions[i]).prop("checked", true);
