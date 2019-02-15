@@ -122,6 +122,10 @@ h2 {
   font-size: 8pt;
 }
 
+.container-snippet {
+	margin: 0;
+	padding: 0;
+}
 .input-snippet {
   grid-column: 1 / 7;
   grid-row: 3;
